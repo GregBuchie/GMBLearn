@@ -13,6 +13,14 @@ from sklearn.linear_model import LogisticRegression
 def main(args):
     # TO DO: enable autologging
 
+import logging
+
+logging.debug('This is a debug message')
+logging.info('This is an info message')
+logging.warning('This is a warning message')
+logging.error('This is an error message')
+logging.critical('This is a critical message')
+
 
     # read data
     df = get_csvs_df(args.training_data)
@@ -33,8 +41,8 @@ def get_csvs_df(path):
     return pd.concat((pd.read_csv(f) for f in csv_files), sort=False)
 
 
-# TO DO: add function to split data
-
+def split_data(X, y = df[['Pregnancies','PlasmaGlucose','DiastolicBloodPressure','TricepsThickness','SerumInsulin','BMI','DiabetesPedigree','Age']].values, df['Diabetic'].values
+len(X)
 
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
